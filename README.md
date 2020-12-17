@@ -4,7 +4,7 @@
 
 | Column             | Type   | Options                  |
 | ------------------ | ------ | ------------------------ |
-| nickname           | string | null: false, unique:true |
+| nickname           | string | null: false              |
 | email              | string | null: false, unique:true |
 | encrypted_password | string | null: false              |
 | last_name          | string | null: false              |
@@ -14,8 +14,8 @@
 | birthday           | date   | null: false              |
 
 ### Association
-- has_many :Items
-- has_many :Buyers
+- has_many :items
+- has_many :buyers
 
 ## Itemsテーブル
 
@@ -32,8 +32,8 @@
 | user               | references | null: false, foreign_key: true |
 
 ### Association
-- belongs_to :User
-- has_one :Buyer
+- belongs_to :user
+- has_one :buyer
 - has_one_attached :image
 
 ## Buyersテーブル
@@ -44,9 +44,9 @@
 | item     | references | null: false, foreign_key: true |
 
 ### Association
-- belongs_to :User
-- belongs_to :Item
-- has_one :Address
+- belongs_to :user
+- belongs_to :item
+- has_one :address
 
 ## Addressesテーブル
 
@@ -60,4 +60,4 @@
 | tel           | string     | null: false                    |
 | buyer         | references | null: false, foreign_key: true |
 ### Association
-- belongs_to :Buyer
+- belongs_to :buyer
