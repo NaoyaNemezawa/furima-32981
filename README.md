@@ -1,24 +1,63 @@
-# README
+# データベース設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Usersテーブル
 
-Things you may want to cover:
+| Column          | Type   | Options     |
+| --------------- | ------ | ----------- |
+| nickname        | string | null: false |
+| email           | string | null: false |
+| password        | string | null: false |
+| last_name       | string | null: false |
+| first_name      | string | null: false |
+| last_name_read  | string | null: false |
+| first_name_read | string | null: false |
+| birthday        | date   | null: false |
 
-* Ruby version
+### Association
+- has_many :Items
+- has_many :Buyers
 
-* System dependencies
+## Itemsテーブル
 
-* Configuration
+| Column          | Type    | Options     |
+| --------------- | ------- | ----------- |
+| name            | string  | null: false |
+| description     | text    | null: false |
+| category        | string  | null: false |
+| state           | string  | null: false |
+| postage_charge  | string  | null: false |
+| shipment_source | string  | null: false |
+| shipment_date   | string  | null: false |
+| price           | integer | null: false |
 
-* Database creation
+### Association
+- belongs_to :User
+- has_one :Buyer
+- has_one_attached :image
 
-* Database initialization
+## Buyersテーブル
 
-* How to run the test suite
+| Column          | Type    | Options     |
+| --------------- | ------- | ----------- |
+| card_number     | string  | null: false |
+| card_limit      | date    | null: false |
+| security_code   | string  | null: false |
 
-* Services (job queues, cache servers, search engines, etc.)
+### Association
+- belongs_to :User
+- belongs_to :Item
+- has_one :Address
 
-* Deployment instructions
+## Addressesテーブル
 
-* ...
+| Column      | Type    | Options     |
+| ----------- | ------- | ----------- |
+| postal_code | string  | null: false |
+| prefectures | text    | null: false |
+| city        | string  | null: false |
+| number      | string  | null: false |
+| building    | string  | none        |
+| tel         | string  | null: false |
+
+### Association
+- belongs_to :Buyer
