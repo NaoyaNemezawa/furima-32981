@@ -29,7 +29,7 @@
 | shipment_source_id | integer    | null: false                    |
 | shipment_date_id   | integer    | null: false                    |
 | price              | integer    | null: false                    |
-| user_id            | references | null: false, foreign_key: true |
+| user               | references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :User
@@ -40,9 +40,9 @@
 
 | Column     | Type       | Options                        |
 | ---------- | ---------- | ------------------------------ |
-| user_id    | references | null: false, foreign_key: true |
-| item_id    | references | null: false, foreign_key: true |
-| address_id | references | null: false, foreign_key: true |
+| user       | references | null: false, foreign_key: true |
+| item       | references | null: false, foreign_key: true |
+| address    | references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :User
