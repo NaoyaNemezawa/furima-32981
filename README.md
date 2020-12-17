@@ -38,11 +38,11 @@
 
 ## Buyersテーブル
 
-| Column          | Type    | Options     |
-| --------------- | ------- | ----------- |
-| card_number     | string  | null: false |
-| card_limit      | date    | null: false |
-| security_code   | string  | null: false |
+| Column     | Type       | Options                        |
+| ---------- | ---------- | ------------------------------ |
+| user_id    | references | null: false, foreign_key: true |
+| item_id    | references | null: false, foreign_key: true |
+| address_id | references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :User
