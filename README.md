@@ -38,11 +38,10 @@
 
 ## Buyersテーブル
 
-| Column     | Type       | Options                        |
-| ---------- | ---------- | ------------------------------ |
-| user       | references | null: false, foreign_key: true |
-| item       | references | null: false, foreign_key: true |
-| address    | references | null: false, foreign_key: true |
+| Column   | Type       | Options                        |
+| -------- | ---------- | ------------------------------ |
+| user     | references | null: false, foreign_key: true |
+| item     | references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :User
@@ -51,14 +50,14 @@
 
 ## Addressesテーブル
 
-| Column        | Type    | Options     |
-| ------------- | ------- | ----------- |
-| postal_code   | string  | null: false |
-| prefecture_id | integer | null: false |
-| city          | string  | null: false |
-| number        | string  | null: false |
-| building      | string  | none        |
-| tel           | string  | null: false |
-
+| Column        | Type       | Options                        |
+| ------------- | ---------- | ------------------------------ |
+| postal_code   | string     | null: false                    |
+| prefecture_id | integer    | null: false                    |
+| city          | string     | null: false                    |
+| number        | string     | null: false                    |
+| building      | string     | none                           |
+| tel           | string     | null: false                    |
+| buyer         | references | null: false, foreign_key: true |
 ### Association
 - belongs_to :Buyer
