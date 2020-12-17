@@ -51,14 +51,14 @@
 
 ## Addressesテーブル
 
-| Column      | Type    | Options     |
-| ----------- | ------- | ----------- |
-| postal_code | string  | null: false |
-| prefectures | text    | null: false |
-| city        | string  | null: false |
-| number      | string  | null: false |
-| building    | string  | none        |
-| tel         | string  | null: false |
+| Column        | Type    | Options     |
+| ------------- | ------- | ----------- |
+| postal_code   | string  | null: false |
+| prefecture_id | integer | null: false |
+| city          | string  | null: false |
+| number        | string  | null: false |
+| building      | string  | none        |
+| tel           | string  | null: false |
 
 ### Association
 - belongs_to :Buyer
