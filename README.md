@@ -2,16 +2,16 @@
 
 ## Usersテーブル
 
-| Column          | Type   | Options     |
-| --------------- | ------ | ----------- |
-| nickname        | string | null: false |
-| email           | string | null: false |
-| password        | string | null: false |
-| last_name       | string | null: false |
-| first_name      | string | null: false |
-| last_name_read  | string | null: false |
-| first_name_read | string | null: false |
-| birthday        | date   | null: false |
+| Column             | Type   | Options                  |
+| ------------------ | ------ | ------------------------ |
+| nickname           | string | null: false, unique:true |
+| email              | string | null: false, unique:true |
+| encrypted_password | string | null: false              |
+| last_name          | string | null: false              |
+| first_name         | string | null: false              |
+| last_name_read     | string | null: false              |
+| first_name_read    | string | null: false              |
+| birthday           | date   | null: false              |
 
 ### Association
 - has_many :Items
@@ -19,16 +19,17 @@
 
 ## Itemsテーブル
 
-| Column          | Type    | Options     |
-| --------------- | ------- | ----------- |
-| name            | string  | null: false |
-| description     | text    | null: false |
-| category        | string  | null: false |
-| state           | string  | null: false |
-| postage_charge  | string  | null: false |
-| shipment_source | string  | null: false |
-| shipment_date   | string  | null: false |
-| price           | integer | null: false |
+| Column             | Type       | Options                        |
+| ------------------ | ---------- | ------------------------------ |
+| name               | string     | null: false                    |
+| description        | text       | null: false                    |
+| category_id        | integer    | null: false                    |
+| state_id           | integer    | null: false                    |
+| postage_charge_id  | integer    | null: false                    |
+| shipment_source_id | integer    | null: false                    |
+| shipment_date_id   | integer    | null: false                    |
+| price              | integer    | null: false                    |
+| user_id            | references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :User
