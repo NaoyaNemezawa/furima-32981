@@ -82,25 +82,25 @@ RSpec.describe User, type: :model do
       end
 
       it 'last_nameが空だと登録できない' do
-        @user.last_name = ""
+        @user.last_name = ''
         @user.valid?
         expect(@user.errors.full_messages).to include("Last name can't be blank")
       end
 
       it 'first_nameが空だと登録できない' do
-        @user.first_name = ""
+        @user.first_name = ''
         @user.valid?
         expect(@user.errors.full_messages).to include("First name can't be blank")
       end
 
       it 'last_name_readが空だと登録できない' do
-        @user.last_name_read = ""
+        @user.last_name_read = ''
         @user.valid?
         expect(@user.errors.full_messages).to include("Last name read can't be blank")
       end
 
       it 'first_name_readが空だと登録できない' do
-        @user.first_name_read = ""
+        @user.first_name_read = ''
         @user.valid?
         expect(@user.errors.full_messages).to include("First name read can't be blank")
       end
