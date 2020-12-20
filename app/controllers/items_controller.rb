@@ -9,6 +9,7 @@ class ItemsController < ApplicationController
 
   def create
     items = Item.new(item_params)
+    binding.pry
     items.save
     redirect_to root_path
   end
