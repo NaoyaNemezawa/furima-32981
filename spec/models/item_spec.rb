@@ -32,31 +32,31 @@ RSpec.describe Item, type: :model do
         expect(@items.errors.full_messages).to include("Description can't be blank")
       end
 
-      it 'カテゴリー情報がないと登録できない' do
+      it 'カテゴリー情報が1だと登録できない' do
         @items.category_id = 1
         @items.valid?
         expect(@items.errors.full_messages).to include('Category must be other than 1')
       end
 
-      it '商品状態の情報がないと登録できない' do
+      it '商品状態の情報が1だと登録できない' do
         @items.state_id = 1
         @items.valid?
         expect(@items.errors.full_messages).to include('State must be other than 1')
       end
 
-      it '配送料の負担についての情報がないと登録できない' do
+      it '配送料の負担についての情報が1だと登録できない' do
         @items.postage_charge_id = 1
         @items.valid?
         expect(@items.errors.full_messages).to include('Postage charge must be other than 1')
       end
 
-      it '発送元の情報がないと登録できない' do
+      it '発送元の情報が1だと登録できない' do
         @items.prefecture_id = 1
         @items.valid?
         expect(@items.errors.full_messages).to include('Prefecture must be other than 1')
       end
 
-      it '発送までの日数の情報がないと登録できない' do
+      it '発送までの日数の情報が1だと登録できない' do
         @items.shipment_date_id = 1
         @items.valid?
         expect(@items.errors.full_messages).to include('Shipment date must be other than 1')
