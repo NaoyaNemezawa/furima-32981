@@ -36,7 +36,7 @@
 - has_one :buyer
 - has_one_attached :image
 
-## Buyersテーブル
+## Ordersテーブル
 
 | Column   | Type       | Options                        |
 | -------- | ---------- | ------------------------------ |
