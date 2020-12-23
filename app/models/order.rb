@@ -1,3 +1,8 @@
 class Order < ApplicationRecord
-  belongs_to :user,:item
+  attr_accessor :token
+  
+  belongs_to :user
+  belongs_to :item
+
+  validates :token, presence: true
 end
