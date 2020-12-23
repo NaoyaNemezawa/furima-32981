@@ -15,7 +15,7 @@
 
 ### Association
 - has_many :items
-- has_many :buyers
+- has_many :orders
 
 ## Itemsテーブル
 
@@ -33,7 +33,7 @@
 
 ### Association
 - belongs_to :user
-- has_one :buyer
+- has_one :order
 - has_one_attached :image
 
 ## Ordersテーブル
@@ -60,4 +60,4 @@
 | tel           | string     | null: false                    |
 | buyer         | references | null: false, foreign_key: true |
 ### Association
-- belongs_to :buyer
+- belongs_to :order
