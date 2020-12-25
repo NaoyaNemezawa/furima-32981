@@ -7,5 +7,7 @@ FactoryBot.define do
     number { '5丁目55番地5' }
     building { '幻ビル' }
     tel { Faker::Number.number(digits: 11) }
+    user_id {2}
+    item_id {3}
   end
 end
