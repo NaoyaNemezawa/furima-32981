@@ -21,7 +21,7 @@
         ¥ <%= @item.price %>
       </span>
       <span class="item-postage">
-        <%= PostageCharge.find(@item.postage_charge_id).name %>
+        <%= @item.postage_charge.name %>
       </span>
     </div>
 
@@ -42,27 +42,27 @@
       <tbody>
         <tr>
           <th class="detail-item">出品者</th>
-          <td class="detail-value"><%= User.find(@item.user_id).nickname %></td>
+          <td class="detail-value"><%= @item.user.nickname %></td>
         </tr>
         <tr>
           <th class="detail-item">カテゴリー</th>
-          <td class="detail-value"><%= Category.find(@item.category_id).name %></td>
+          <td class="detail-value"><%= @item.category.name %></td>
         </tr>
         <tr>
           <th class="detail-item">商品の状態</th>
-          <td class="detail-value"><%= State.find(@item.state_id).name %></td>
+          <td class="detail-value"><%= @item.state.name %></td>
         </tr>
         <tr>
           <th class="detail-item">配送料の負担</th>
-          <td class="detail-value"><%= PostageCharge.find(@item.postage_charge_id).name %></td>
+          <td class="detail-value"><%= @item.postage_charge.name %></td>
         </tr>
         <tr>
           <th class="detail-item">発送元の地域</th>
-          <td class="detail-value"><%= Prefecture.find(@item.prefecture_id).name %></td>
+          <td class="detail-value"><%= @item.prefecture.name %></td>
         </tr>
         <tr>
           <th class="detail-item">発送日の目安</th>
-          <td class="detail-value"><%= ShipmentDate.find(@item.shipment_date_id).name %></td>
+          <td class="detail-value"><%= @item.shipment_date.name %></td>
         </tr>
       </tbody>
     </table>
@@ -102,7 +102,7 @@
     </a>
   </div>
   <%# 詳細ページで表示されている商品のカテゴリー名を表示しましょう %>
-  <a href=“#” class=‘another-item’><%= Category.find(@item.category_id).name %>をもっと見る</a>
+  <a href=“#” class=‘another-item’><%= @item.category.name %>をもっと見る</a>
   <%# //詳細ページで表示されている商品のカテゴリー名を表示しましょう %>
 </div>
 
