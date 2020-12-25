@@ -26,14 +26,12 @@ RSpec.describe OrderAddress, type: :model do
       it 'トークンが発行されなければ商品は購入できない' do
         @order_address.token = ''
         @order_address.valid?
-        # binding.pry
         expect(@order_address.errors.full_messages).to include("Token can't be blank")
       end
 
       it '郵便番号が空だと商品は購入できない' do
         @order_address.postal_code = ''
         @order_address.valid?
-        # binding.pry
         expect(@order_address.errors.full_messages).to include("Postal code can't be blank")
       end
 
