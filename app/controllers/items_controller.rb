@@ -3,7 +3,6 @@ class ItemsController < ApplicationController
   before_action :item_find, only: [:show, :edit, :update, :destroy]
   def index
     @items = Item.order('created_at DESC').includes(:order)
-    # binding.pry
   end
 
   def new
