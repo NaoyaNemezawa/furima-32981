@@ -16,6 +16,7 @@ class OrdersController < ApplicationController
       redirect_to root_path
     else
       redirect_to item_orders_path(@item.id)
+      flash[:notice] = @order_address.errors.full_messages
     end
   end
 

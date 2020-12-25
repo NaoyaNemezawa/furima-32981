@@ -33,7 +33,15 @@
 
     <%= form_with model: @order_address, url:item_orders_path(@item.id), id: 'charge-form', class: 'transaction-form-wrap',local: true do |f| %>
 
-    <%= render "shared/error_messages", model: f.object %>
+    <% if flash[:notice] %>
+      <div class="error-alert">
+        <ul>
+          <% flash[:notice].each do |message| %>
+          <li class='error-message'><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
     
     <%# カード情報の入力 %>
     <div class='credit-card-form'>
